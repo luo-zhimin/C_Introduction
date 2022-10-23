@@ -1,8 +1,16 @@
 //引入头文件
 #include <stdio.h>
+#include <math.h>
+
+//void clib(){
+//    double result = pow(3,2);
+//    printf("\nresult %f",result);
+//}
+
+void clib(){}
 
 //main function
-void main(){
+void main() {
 //    printf("hello Word!!");
 //    return 0;
 
@@ -21,7 +29,8 @@ void main(){
     printf("你好\"我是小红\"\n");
     printf("北京\t上海\t天津\n");
     printf("姓名\t\t年龄\t籍贯\t住址\nJohn\t23\t上海\t外滩");
-
+    clib();
     //停留 窗口
 //    getchar();
 }
+
