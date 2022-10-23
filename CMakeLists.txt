@@ -4,3 +4,4 @@ project(C_Introduction C)
 set(CMAKE_C_STANDARD 99)
 
 add_executable(C_Introduction main.c)
+#add_executable(C_Introduction hello.c)
