@@ -25,5 +25,7 @@ int main(){
     int num = 999;
     int* pointer = &num;
     printf("ptr address[%p] value[%p] target value value[%d]",&pointer,pointer,*pointer);
+    //基本类型，都有对应的指针类型， 形式为 数据类型 *，比如 int 的对应的指针就是 int *, float 对应的指针类型就是 float * , 依次类推
+    //此外还有指向数组的指针、指向结构体的指针，指向共用体的指针，(二级指针，多级指针)后
     return 0;
 }
