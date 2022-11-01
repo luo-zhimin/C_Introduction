@@ -60,6 +60,34 @@ int main(){
     printf("\n");
     //不断输入姓名，直到输入 "exit" 为止[使用 while 完成]
     //int	 strcmp(const char *__s1, const char *__s2);
-    printf("\nstring = %d",strcmp((const char *) 1, (const char *) 1));
+//    printf("\nstring = %d",strcmp("1", "1"));
+    char name[20] = "";
+    while (strcmp(name,"exit")!=0){
+        printf("name:");
+        scanf("%s",name);
+        printf("name [%s]\n",name);
+    }
+
+    //do...while...
+    //1) 打印 1—100
+    //2) 计算 1—100 的和
+    //3) 统计 1——200 之间能被 5 整除但不能被 3 整除的个数
+    int x = 0;
+    int maxX = 200;
+    int doSum = 0;
+    int doCount = 0;
+    do {
+        x++;
+        if(x<=100){
+            printf("do..while..[%d]\n",x);
+            doSum+=x;
+        }
+        if (x % 5 == 0 && x % 3 != 0) {
+            doCount++;
+        }
+    } while (x<=maxX);
+
+    printf("do..while..sum[%d]\n",doSum);
+    printf("do..while..count[%d]",doCount);
     return 0;
 }
