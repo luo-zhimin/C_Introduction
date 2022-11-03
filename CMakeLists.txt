@@ -8,6 +8,13 @@ string(REPLACE " " "_" ProjectId ${ProjectId})
 project(${ProjectId} C)
 
 file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
+#CMake can not determine linker language for target: function.h
+#file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
+
+#set(MY_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/function.h")
+
+#include_directories(${MY_HEADER})
+
 #配置运行多个main方法 c
 foreach(file ${files})
     get_filename_component(name ${file} NAME)

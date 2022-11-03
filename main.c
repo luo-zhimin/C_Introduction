@@ -1,6 +1,7 @@
 //引入头文件
 #include <stdio.h>
 #include <math.h>
+#include "function.h"
 
 //void clib(){
 //    double result = pow(3,2);
@@ -32,5 +33,8 @@ void main() {
     clib();
     //停留 窗口
 //    getchar();
+
+    double result = cal(1,2,'*');
+    printf("function test mit %.2f",result);
 }
 
