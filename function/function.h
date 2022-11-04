@@ -1,4 +1,3 @@
-//实现自己定义的h文件 头文件
 double cal(double x, double y, char operation) {
 
     double result = 0.0;

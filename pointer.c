@@ -2,7 +2,6 @@
 
 /**
  * 指针 <br><br>
- *
  */
 int main(){
     int number =1;

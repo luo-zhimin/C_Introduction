@@ -7,7 +7,8 @@ get_filename_component(ProjectId ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 string(REPLACE " " "_" ProjectId ${ProjectId})
 project(${ProjectId} C)
 
-file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
+#file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
+file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*/*.c" "${CMAKE_CURRENT_SOURCE_DIR}/*.c")
 #CMake can not determine linker language for target: function.h
 #file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
 
