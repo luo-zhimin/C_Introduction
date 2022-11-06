@@ -11,3 +11,6 @@ int main() {
     return 0;
 }
 
+void sayName(){
+    printf("clion second function~");
+}

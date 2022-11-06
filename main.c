@@ -36,5 +36,6 @@ void main() {
 
     double result = cal(1,2,'*');
     printf("\nfunction test mit %.2f",result);
+//    sayName();
 }
 
