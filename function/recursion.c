@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+//int number = 99;
 //递归
 int test(int n){
     if(n>2){
