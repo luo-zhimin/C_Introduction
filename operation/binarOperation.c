@@ -17,11 +17,13 @@ void main(){
     int sixteen = 0x34a;
     //binary transform to ten
     int ten = 1* pow(2,0)+1* pow(2,1)+0* pow(2,2)+1* pow(2,3);
+    printf("binary transform to ten %d\n",ten);
     //eight transform to ten
     ten = 3* pow(8,0)+2* pow(8,1)+1* pow(8,2)+0* pow(8,3);
+    printf("eight transform to ten %d\n",ten);
     //sixteen
     ten = 10* pow(16,0)+4* pow(16,1)+3* pow(16,2);//10+64+256*3
-    printf("ten %d", ten);
+    printf("sixteen transform to ten %d", ten);
 
     //十进制 转化其他进制 除以对应的进制 取余数倒过来
 

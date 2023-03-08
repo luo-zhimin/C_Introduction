@@ -46,6 +46,7 @@ void main() {
     //long 输出 %ld (long long) %lld
     printf("number[%d]", number);
     printf("number[%d] score[%f] sex[%c] name[%s]\n", number,score,sex,name);
+    //sizeof(int) int 占多个字节
     printf("int size[%lu] long size[%lu] long[%ld]\n",sizeof(int), sizeof(long),l);//4 byte
     //double .2f 保留2位 float 6 位 double 15位 %f 默认是输出 6位 小数点后6位
     printf("double [%.2f]\n",sum);
