@@ -4,29 +4,61 @@
 int main(){
 
     printf("loop controller exercise\n");
-    printf("九九乘法表");
-    //打印出九九乘法表
-    int level = 9;
-    for (int i = 0; i <= level; ++i){
-        for (int j = 1; j <=i; j++){
-            printf("%d*%d=%d\t",i,j,(i*j));
+
+    //2n-1
+    printf("金字塔");
+    //金字塔
+    //请编写一个程序，可以接收一个整数,表示层数（totalLevel） while实现
+    //先从正方形开始
+    //层数
+    int totalLevel = 5;
+
+    for (int i = 1; i <= totalLevel; ++i) {
+
+        //1.打印正方形(矩形)
+//        for (int j = 0; j < totalLevel; ++j) {
+
+        //2. 打印半个金字塔
+//        for (int j = 0; j < i; ++j) {
+//            printf("*\t");
+//        }
+
+        //3.打印整个金字塔
+        //增加缩进
+        for (int j = 0; j < totalLevel - i; ++j) {
+            printf("\t");
+        }
+
+        //找规律打印
+//        for (int k = 1; k <= 2 * i - 1; ++k) {
+//            printf("*\t");
+//        }
+
+        //4. 打印空心金字塔
+        for (int k = 1; k <= 2 * i - 1; ++k) {
+            //第一层和最后一层都是完美打印 其余都是第一个和最后一个打印 其余补充 \t
+            //|| i==totalLevel
+            if(k==1 || k== 2 * i - 1){
+                printf("*\t");
+            } else {
+                printf("\t");
+            }
         }
         printf("\n");
     }
 
-    //打印出金字塔
-    printf("\n");
-    //2n-1
-    printf("金字塔");
-    int totalLevel = 6;
-    for (int i = 0; i < totalLevel; ++i){
-        //输出空格\t
-        for (int k = 0; k < totalLevel - i; ++k){
+    //5. 打印空心菱形
+    for (int i = 1; i <= totalLevel; ++i) {
+        //0->4
+        for (int j = 1; j <= i - 1; ++j) {
             printf("\t");
         }
-
-        for (int j = 0; j < 2 * i - 1; ++j) {
-            printf("*\t");
+        for (int m = 1; m <= 2 * (totalLevel-i) + 1; ++m) {
+            if (m == 1 || m == 2 * (totalLevel-i) + 1) {
+                printf("*\t");
+            } else {
+                printf("\t");
+            }
         }
         printf("\n");
     }
