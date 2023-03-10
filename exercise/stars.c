@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
+int main() {
 
     printf("loop controller exercise\n");
 
@@ -38,7 +38,7 @@ int main(){
         for (int k = 1; k <= 2 * i - 1; ++k) {
             //第一层和最后一层都是完美打印 其余都是第一个和最后一个打印 其余补充 \t
             //|| i==totalLevel
-            if(k==1 || k== 2 * i - 1){
+            if (k == 1 || k == 2 * i - 1) {
                 printf("*\t");
             } else {
                 printf("\t");
@@ -53,8 +53,8 @@ int main(){
         for (int j = 1; j <= i - 1; ++j) {
             printf("\t");
         }
-        for (int m = 1; m <= 2 * (totalLevel-i) + 1; ++m) {
-            if (m == 1 || m == 2 * (totalLevel-i) + 1) {
+        for (int m = 1; m <= 2 * (totalLevel - i) + 1; ++m) {
+            if (m == 1 || m == 2 * (totalLevel - i) + 1) {
                 printf("*\t");
             } else {
                 printf("\t");
@@ -68,30 +68,16 @@ int main(){
 //        printf("rand=%d\t",rand());
 //    }
     //break 语句用于终止某个语句块的执行，一般使用在 switch 或者循环[三大循环]中
-    int count=0;
-    for (;;){
+    int count = 0;
+    for (;;) {
         int value = rand();
-        printf("rand=%d\n",value);
+        printf("rand=%d\n", value);
         count++;
-        if (value==97){
+        if (value == 97) {
             break;
         }
     }
-    printf("第%d回找到97",count);
-
-    //continue 语句用于结束本次循环，继续执行下一次循环
-    //continue 语句，只能配合循环语言使用，不能单独和 switch/if 使用
-
-    //todo goto
-    //1) C 语言的 goto 语句可以无条件地转移到程序中指定的行。
-    //2) goto 语句通常与条件语句配合使用。可用来实现条件转移，跳出循环体等功能。
-    //3) 在 C 程序设计中一般不主张使用 goto 语句， 以免造成程序流程的混乱，使理解和调试程序都产生困难
-
-    goto label;
-    printf("goto 1");
-    printf("goto 2");
-    label:
-    printf("goto 3");//print
+    printf("第%d回找到97", count);
 
     return 0;
 }
