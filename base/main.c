@@ -1,7 +1,7 @@
 //引入头文件
 #include <stdio.h>
 #include <math.h>
-#include "../function/function.h"
+#include "../function/fisrtFunction.h"
 
 //void clib(){
 //    double result = pow(3,2);
