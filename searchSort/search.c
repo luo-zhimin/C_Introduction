@@ -37,13 +37,13 @@ int binarySearch(int binaryArray[], int left, int right, int value) {
     printf("middle index = %d,middleValue=%d,findValue=%d\n",middleIndex,middleValue,value);
     if(middleValue>value){
         //递归
-        binarySearch(binaryArray,left,middleIndex-1,value);
+       return binarySearch(binaryArray,left,middleIndex-1,value);
     } else if(middleValue<value){
-        binarySearch(binaryArray,middleIndex+1,right,value);
+       return binarySearch(binaryArray,middleIndex+1,right,value);
     } else{
         return middleIndex;
     }
-    //return question need have a default value ？？？
+    //return question need have a default value ？？？everyPath need return !!
 //    return -888;
 }
 
@@ -55,18 +55,18 @@ void main() {
 
     /*
         顺序查找
-
+            for
         二分查找
-
+            必须有序数组(middle->[(left+right)/2]->middleValue<=>findValue recurrence)
      */
 
     //猜数游戏：从键盘中任意输入一个数，判断数列中是否包含该数【顺序查找】 要求: 如果找到了，就提示找到， 并给出下标值, 找不到提示 没有
     int findArray[] = {23, 1, 34, 89, 101};
     int number = 0;
-    printf("output one number find isLive: ");
-    scanf("%d", &number);
-    int index = seqSearch(findArray, number);
-    printf("index = %d,%s\n", index, index != -1 ? "找到" : "没有");
+//    printf("output one number find isLive: ");
+//    scanf("%d", &number);
+//    int index = seqSearch(findArray, number);
+//    printf("index = %d,%s\n", index, index != -1 ? "找到" : "没有");
 
     //请对一个有序数组进行二分查找 {1,8, 10, 89, 1000, 1234} ，输入一个数看看该数组是否存在此数，并且求出下 标，如果没有就提示"没有这个数"
     int binaryArray[] = {1, 8, 10, 89, 1000, 1234};
@@ -75,6 +75,6 @@ void main() {
     // middleValue<findValue right++
     // middleValue=findValue index
     int len = sizeof(binaryArray) / sizeof(int);
-    int binaryIndex = binarySearch(binaryArray,0,len-1,-89);
+    int binaryIndex = binarySearch(binaryArray,0,len-1,1000);
     printf("binaryIndex = %d \n", binaryIndex);
 }
