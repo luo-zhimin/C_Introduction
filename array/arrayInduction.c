@@ -81,24 +81,25 @@ void main() {
     printf("---------------\n");
 
     //创建一个 char 类型的 26 个元素的数组，分别 放置'A'-'Z‘。使用 for 循环访问所有元素并打印出来
-    char charArray[26] ={};
-    for (int i = 0; i < 26; ++i){
-        charArray[i]='A'+i;
+    char charArray[26] = {};
+    for (int i = 0; i < 26; ++i) {
+        charArray[i] = 'A' + i;
     }
-    for (int i = 0; i < 26; ++i){
-        printf("charArray=%c\n",charArray[i]);
+    for (int i = 0; i < 26; ++i) {
+        printf("charArray=%c\n", charArray[i]);
     }
     printf("---------------\n");
 
     //请求出一个数组的最大值，并得到对应的下标
     int arr1[] = {0, -1, 89, 99, 4, 0, 23, 876, 9876, 3, 4, 6};
     //最大值 最大下标
-    int max,index;
-    for (int i = 0; i < sizeof(arr1) / sizeof(int); ++i){
-        if(arr1[i]>arr1[i+1]){
+    int max = arr1[0];
+    int index = 0;
+    for (int i = 0; i < sizeof(arr1) / sizeof(int); ++i) {
+        if (arr1[i] > max) {
             max = arr1[i];
-            index=i;
+            index = i;
         }
     }
-    printf("max=%d index=%d",max,index);
+    printf("max=%d index=%d", max, index);
 }
