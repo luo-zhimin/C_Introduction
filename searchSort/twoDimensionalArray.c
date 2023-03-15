@@ -1,6 +1,21 @@
 #include <stdio.h>
 
 /**
+ * show array
+ * @param row 行
+ * @param clo 列
+ * @param dimensionalArray 二维数组
+ */
+void showDimensionalArray(int row,int clo,int dimensionalArray[row][clo]){
+    for (int i = 0; i < row; ++i){
+        for (int j = 0; j < clo; ++j){
+            printf("%d\t",dimensionalArray[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+/**
  * 二维数组
  */
 void main() {
@@ -30,12 +45,9 @@ void main() {
     fiveChess[2][3] = 3;
 
     //show 灵活遍历
-    for (int i = 0; i < sizeof(fiveChess) / sizeof(fiveChess[0]); ++i) {
-        for (int j = 0; j < sizeof(fiveChess[i]) / sizeof(fiveChess[i][0]); ++j) {
-            printf("%d\t", fiveChess[i][j]);
-        }
-        printf("\n");
-    }
+    int fRow = sizeof(fiveChess)/sizeof (fiveChess[0]);
+    int fClo = sizeof(fiveChess[0])/sizeof (int);
+    showDimensionalArray(fRow,fClo,fiveChess);
 
     //直接初始化
     //定义 类型 数组名[大小][大小] = {{值 1,值 2..},{值 1,值 2..},{值 1,值 2..}};
@@ -99,4 +111,18 @@ void main() {
         }
         printf("\n");
     }
+
+    /**
+        二维数组使用细节和注意事项
+            可以只对部分元素赋值，未赋值的元素自动取“零”值
+            如果对全部元素赋值，那么第一维的长度可以不给出
+            二维数组可以看作是由一维数组嵌套而成的；如果一个数组的每个元素又是一个数组，那么它就是二维数组。
+     */
+
+    //可以只对部分元素赋值，未赋值的元素自动取“零”值
+    int a[4][5] = {{1}, {2}, {3},{1}};
+
+    int aRow = sizeof(a)/sizeof (a[0]);
+    int aClo = sizeof(a[0])/sizeof (int);
+    showDimensionalArray(aRow,aClo,a);
 }
