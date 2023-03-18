@@ -60,8 +60,11 @@ void main() {
     /* 带有 5 个元素的整型数组 */
     int balance[5] = {1000, 2, 3, 17, 50};
     double avg; /* 传递一个指向数组的指针作为参数 */
-    avg = getAverage(balance, 5); /* 输出返回值 */
-    printf("Average value is: %f\n", avg);
+    //不会对arr存放地址进行修改 => 通过下标进行修改
+//    avg = getAverage(balance, 5);
+    //会进行修改 因为是 *pointer++
+    avg = getAverage2(balance, 5);
+    printf("Average value is: %.2f\n", avg);
 }
 
 /**
@@ -76,6 +79,7 @@ double getAverage(int *arr, int size) {
     for (int i = 0; i < size; ++i) {
         //移动一个一个int字节=》4byte
         sum += arr[i];
+        //不会对存放地址进行改变
         printf("arr 存放的地址=%p\n", arr);
     }
     return (double) sum / size;
@@ -85,6 +89,7 @@ double getAverage2(int *arr, int size) {
     int sum = 0;
     for (int i = 0; i < size; ++i) {
         sum += *arr;
+        //会对存放地址做修改
         printf("arr 存放的地址=%p\n", arr);
         //pointer move int byte
         arr++;
