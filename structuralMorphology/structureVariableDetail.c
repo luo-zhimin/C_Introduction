@@ -22,9 +22,9 @@ struct Visitor{
 
 char *say(struct Dog dog);
 
-int volume(struct Box box);
+int volume(struct Box *box);
 
-void checkVisitor(struct Visitor visitor);
+void checkVisitor(struct Visitor *visitor);
 
 void main() {
 
@@ -84,7 +84,7 @@ void main() {
     printf("请输入长宽高：");
     scanf("%d %d %d",&length,&weight,&height);
     struct Box box = {length,weight,height};
-    int volumeValue = volume(box);
+    int volumeValue = volume(&box);
     printf("立方体的体积=%d\n",volumeValue);
 
     //一个景区根据游人的年龄收取不同价格的门票。
@@ -101,7 +101,7 @@ void main() {
         }
         printf("请输入您的年龄：");
         scanf("%d",&visitor.age);
-        checkVisitor(visitor);
+        checkVisitor(&visitor);
     }
     printf("exit visitor~~\n");
 }
@@ -114,14 +114,16 @@ char *say(struct Dog dog) {
     return speak;
 }
 
-int volume(struct Box box){
-    return box.length*box.weight*box.height;
+int volume(struct Box *box){
+    return (*box).length*(*box).weight*(*box).height;
 }
 
-void checkVisitor(struct Visitor visitor){
-    if(visitor.age>18){
-        printf("visitor name=%s,age=%d,money=%d\n",visitor.name,visitor.age,20);
+//因为结构体默认是值传递，会拷贝一份完整数据，效率较低
+// 因此，为了提高效率，我们直接接收地址(指针)
+void checkVisitor(struct Visitor *visitor){
+    if((*visitor).age>18){
+        printf("visitor name=%s,age=%d,money=%d\n",(*visitor).name,(*visitor).age,20);
     } else{
-        printf("visitor name=%s,age=%d,money=%d\n",visitor.name,visitor.age,0);
+        printf("visitor name=%s,age=%d,money=%d\n",(*visitor).name,(*visitor).age,0);
     }
 }
